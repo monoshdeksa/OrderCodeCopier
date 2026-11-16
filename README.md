@@ -16,9 +16,11 @@ Aplikasi utilitas Android (Kotlin + Google ML Kit Text Recognition) dengan **tom
 ## Cara Build APK
 
 ### Opsi 1: GitHub Actions (Tanpa Install Android SDK di PC)
-1. Upload folder `OrderCodeCopier` ini ke repository GitHub baru (branch `main` atau `master`).
-2. Workflow `.github/workflows/build-apk.yml` akan otomatis berjalan (atau bisa dijalankan manual lewat tab **Actions → Build Android APK → Run workflow**).
-3. Setelah selesai, unduh artifact **`OrderCodeCopier-debug-apk`** yang berisi `app-debug.apk`, lalu instal di HP Android Anda.
+1. Publish/push folder `OrderCodeCopier` ini ke repository GitHub baru lewat **GitHub Desktop** atau `git push` (hindari drag-and-drop di browser karena folder tersembunyi `.github` sering tidak ikut ter-upload).
+2. Workflow `.github/workflows/build-apk.yml` akan otomatis berjalan (atau jalankan manual lewat tab **Actions → Build Android APK → Run workflow**).
+3. Setelah status build centang hijau (✓), unduh APK lewat salah satu cara berikut:
+   - **Cara termudah di HP (Releases):** Buka halaman utama repository → ketuk **Releases** → unduh **`OrderCodeCopier-debug.apk`** langsung tanpa ekstrak ZIP. *(Pastikan di Settings → Actions → General → Workflow permissions terpilih "Read and write permissions" jika release belum muncul.)*
+   - **Via Actions Artifacts:** **Login ke akun GitHub** di browser HP → buka tab **Actions** → buka run paling atas → scroll ke bawah ke bagian **Artifacts** → ketuk **`OrderCodeCopier-debug-apk`**, lalu ekstrak file `.zip` untuk memasang `app-debug.apk`.
 
 ### Opsi 2: Android Studio (Lokal)
 1. Buka folder `OrderCodeCopier` di **Android Studio** (dengan JDK 17 & Android SDK Platform 35).
